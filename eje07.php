@@ -25,14 +25,14 @@
     <table>
         <tr>
             <td style="width: <?php echo $green; ?>px; background-color: green; height: 30px;">
-                <?php echo "Verde: ".$red?>
+                <?php echo "Verde: ".$green?>
             </td>
         </tr>
     </table>
     <table>
         <tr>
             <td style="width: <?php echo $blue; ?>px; background-color: blue; height: 30px;">
-                <?php echo "Azul: ".$red?>
+                <?php echo "Azul: ".$blue?>
             </td>
         </tr>
     </table>
