@@ -17,25 +17,21 @@
     <code>
         <?php
         $totalFilas = random_int(1, 20);
-        for ($FilaActual = 0; $FilaActual < $totalFilas; $FilaActual++) {
+        for ($FilaActual = 0; $FilaActual < $totalFilas; $FilaActual++) 
+        {
             // lo ma imporante 
             $CantidadEspacios = $totalFilas - $FilaActual;
             $CantidadAsteriscos = 2 * $FilaActual - 1;
-
-            for ($i = 1; $i <= $CantidadEspacios; $i++) {
-                echo "&nbsp"; 
-            }
-            for ($i = 1; $i <= $CantidadAsteriscos; $i++) {
-                echo "*";
-            }
-            for ($i = 1; $i <= $CantidadEspacios; $i++) {
-                echo "&nbsp";
-            }
+            
+            for ($i = 1; $i <= $CantidadEspacios; $i++) { echo "&nbsp"; }
+            for ($i = 1; $i <= $CantidadAsteriscos; $i++) {echo "*";}
+            for ($i = 1; $i <= $CantidadEspacios; $i++) {echo "&nbsp";}
             echo "<br>";
         }
         
         ?>
     </code>
+    
 </body>
 
 </html>
