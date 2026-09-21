@@ -39,7 +39,7 @@
         // osea menor que 666 y si es mayor (false)
         // sale 
     } while ($contadorDemon < 3);
-
+    
     // Cuentas el tiempo del principio y del final, 
     // los restas y te sale el tiempo total 
     $tiempoFinal = microtime(true);
