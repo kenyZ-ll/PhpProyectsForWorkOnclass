@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" http-equiv="refresh" content="5">
+    <meta name="viewport" http-equiv="refresh" content="0.8">
     <title>Document</title>
 </head>
 <body>
