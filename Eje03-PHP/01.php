@@ -40,7 +40,6 @@
 
         <?php endfor ?>
     </div>
-
     <table>
         <tr>
             <th  class="tabla" style="border: 1px solid #020202; color: #2f57be;display: flex; align-items: center; justify-content: center;"> 
