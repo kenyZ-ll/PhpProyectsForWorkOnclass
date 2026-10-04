@@ -1,12 +1,51 @@
-<?php 
-    /* 
-      5.  Realizar un programa en PHP que muestre un posible resultado de la bonoloto: 
-      Se presentarán 6 números obtenidos aleatoriamente en el rango de 1 a 49 (ambos inclusive) 
-      Los 5 primeros forman la jugada ganadora y deberán presentar ordenados de menor a mayor en una tabla html; 
-      el sexto es el número complementario.  Por supuesto los números no pueden repetirse.
+<?php
+// Relleno una tabla con valores de 1 a 49
+$valores = [];
+for ($i = 1; $i <= 49; $i++) {
+    $valores[] = $i;
+}
+// OBTENGO 5+1 INDICES ALEATORIOS ordenados de la tabla (OJO NO VALORES )
+$indices = array_rand($valores, 6);
 
-    */
-      $generador = rand(1,49);
-      $base = [$generador];
-     
+// Me quedo con los valores
+// En este caso valores e indices es casi lo mismo $valor == $indice+1
+$vbonoloto = [];
+foreach ($indices as $i) {
+    $vbonoloto[] = $valores[$i];
+}
+// Obtengo el número complementario y lo elimino de la tabla
+$icomplementario = array_rand($vbonoloto); //  Una posición aleatoria
+$complementario = $vbonoloto[$icomplementario]; // Valor
+unset($vbonoloto[$icomplementario]);            // Elimino
+
 ?>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BONOLOTO</title>
+    <style type="text/css">
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+    <b>Sorteo del Bonoloto</b>
+    <table border=1>
+        <tr>
+            <?php foreach ($vbonoloto as $num) : ?>
+                <td><?= $num ?></td>
+            <?php endforeach ?>
+            <td>Complementario <?= $complementario ?></td>
+        </tr>
+    </table>
+    <hr>
+    <?php show_source(__FILE__); ?>
+    <hr>
+    </body>
+
+</html>

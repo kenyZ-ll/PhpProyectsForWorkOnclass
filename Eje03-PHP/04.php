@@ -9,7 +9,7 @@
     $names = array_keys($medios);
     $links = array_values($medios);
     $contador = count($medios);
-?>
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
