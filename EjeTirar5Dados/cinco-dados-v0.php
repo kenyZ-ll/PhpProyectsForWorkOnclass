@@ -22,7 +22,7 @@ $cDatos = [
 
 /* Funciones auxiliares */
 
-/**
+/** 
  *  Genera un array con valores de dados 1..6
  * @param int $numdados - tamaño de array generado
  * @return int[] array generado
