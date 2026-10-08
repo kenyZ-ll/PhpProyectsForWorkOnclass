@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="Calavera">
+  <path d="M100 10C50 10 14 48 14 98c0 30 12 50 30 64v36c0 10 8 18 18 18h76c10 0 18-8 18-18v-36c18-14 30-34 30-64C186 48 150 10 100 10z" fill="#ede6c8" stroke="#1a1a1a" stroke-width="8"/>
+  <ellipse cx="65" cy="105" rx="26" ry="24" fill="#1a1a1a"/>
+  <ellipse cx="135" cy="105" rx="26" ry="24" fill="#1a1a1a"/>
+  <path d="M100 130l-12 26h24z" fill="#1a1a1a"/>
+  <rect x="62" y="178" width="76" height="26" rx="4" fill="#fff" stroke="#1a1a1a" stroke-width="5"/>
+  <path d="M78 178v26M94 178v26M110 178v26M126 178v26" stroke="#1a1a1a" stroke-width="4"/>
+</svg>

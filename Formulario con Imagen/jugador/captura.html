@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Jugador</title>
+  <style>
+    body { font-family: "Courier New", monospace; background: #9a9ab5; margin: 0; padding: 20px; }
+    h1 { text-align: center; }
+    form { background: #fff; max-width: 480px; margin: 0 auto; padding: 20px; border-radius: 12px; }
+    label, legend { font-weight: bold; }
+    input[type="text"], input[type="number"], input[type="file"] {
+      width: 100%; padding: 8px; margin: 6px 0 14px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;
+    }
+    fieldset { margin-bottom: 14px; border: 1px solid #ddd; }
+    fieldset label { display: block; }
+    #errorImagen { color: #c00; font-weight: bold; min-height: 1.2em; }
+    #errorImagenesCarrusel { color: #c00; font-weight: bold; min-height: 1.2em; }
+    button { background: #007bff; color: #fff; border: 0; padding: 10px 16px; border-radius: 6px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Formulario de Jugador</h1>
+
+  <!-- enctype multipart/form-data es obligatorio para subir ficheros -->
+  <form id="formulario" action="index.php" method="POST" enctype="multipart/form-data">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="alias">Alias:</label>
+    <input type="text" id="alias" name="alias" required>
+
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" min="1" max="120" required>
+
+    <fieldset>
+      <legend>Armas a elegir (puedes elegir varias):</legend>
+      <label><input type="checkbox" name="armas[]" value="Maza"> Maza</label>
+      <label><input type="checkbox" name="armas[]" value="Antorcha"> Antorcha</label>
+      <label><input type="checkbox" name="armas[]" value="Martillo"> Martillo</label>
+      <label><input type="checkbox" name="armas[]" value="Látigo"> Látigo</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>¿Practica artes mágicas?</legend>
+      <label><input type="radio" name="magia" value="Sí" required> Sí</label>
+      <label><input type="radio" name="magia" value="No"> No</label>
+    </fieldset>
+
+    <label for="imagen">Subir imagen:</label>
+    <!-- Cliente: solo PNG (accept) y 10 KB como máximo (JS) -->
+    <input type="file" id="imagen" name="imagen" accept="image/png">
+    <div id="errorImagen" role="alert"></div>
+
+    <label for="imagenesCarrusel">Imágenes para el carrusel (máximo 4):</label>
+    <input type="file" id="imagenesCarrusel" name="imagenes[]" accept="image/png" multiple
+           aria-describedby="errorImagenesCarrusel">
+    <div id="errorImagenesCarrusel" role="alert"></div>
+
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+  </form>
+
+  <script>
+    // Validación en el cliente: tipo PNG y tamaño máximo 10 KB
+    const MAX_BYTES = 10 * 1024;
+    const inputImagen = document.getElementById('imagen');
+    const errorImagen = document.getElementById('errorImagen');
+    const MAX_IMAGENES = 4;
+    const inputImagenesCarrusel = document.getElementById('imagenesCarrusel');
+    const errorImagenesCarrusel = document.getElementById('errorImagenesCarrusel');
+
+    function imagenValida() {
+      errorImagen.textContent = '';
+      const f = inputImagen.files[0];
+      if (!f) return true;                       // la imagen es opcional
+      if (f.type !== 'image/png') {
+        errorImagen.textContent = 'Solo se permiten archivos PNG.';
+        return false;
+      }
+      if (f.size > MAX_BYTES) {
+        errorImagen.textContent = 'La imagen no puede superar los 10 KB.';
+        return false;
+      }
+      return true;
+    }
+
+    inputImagen.addEventListener('change', () => {
+      if (!imagenValida()) inputImagen.value = '';
+    });
+
+    function imagenesCarruselValidas() {
+      errorImagenesCarrusel.textContent = '';
+      const imagenes = Array.from(inputImagenesCarrusel.files);
+
+      if (imagenes.length > MAX_IMAGENES) {
+        errorImagenesCarrusel.textContent = 'Solo puedes seleccionar hasta 4 imágenes para el carrusel.';
+        return false;
+      }
+
+      const imagenInvalida = imagenes.find((imagen) => (
+        imagen.type !== 'image/png' || imagen.size > MAX_BYTES
+      ));
+
+      if (imagenInvalida) {
+        errorImagenesCarrusel.textContent = imagenInvalida.type !== 'image/png'
+          ? 'Todas las imágenes del carrusel deben ser archivos PNG.'
+          : 'Cada imagen del carrusel no puede superar los 10 KB.';
+        return false;
+      }
+
+      return true;
+    }
+
+    inputImagenesCarrusel.addEventListener('change', () => {
+      if (!imagenesCarruselValidas()) inputImagenesCarrusel.value = '';
+    });
+
+    document.getElementById('formulario').addEventListener('submit', (e) => {
+      if (!imagenValida() || !imagenesCarruselValidas()) e.preventDefault();
+    });
+
+    document.getElementById('formulario').addEventListener('reset', () => {
+      errorImagen.textContent = '';
+      errorImagenesCarrusel.textContent = '';
+    });
+  </script>
+</body>
+</html>

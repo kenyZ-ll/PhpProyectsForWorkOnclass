@@ -1,0 +1,77 @@
+:root {
+  --carrusel-color-control: #007bff;
+  --carrusel-color-foco: #111;
+  --carrusel-color-indicador: #555;
+}
+
+.carrusel {
+  margin: 24px auto 0;
+  max-width: 100%;
+  text-align: center;
+}
+
+.carrusel:focus-visible,
+.carrusel__boton:focus-visible,
+.carrusel__indicador:focus-visible {
+  outline: 3px solid var(--carrusel-color-foco);
+  outline-offset: 3px;
+}
+
+.carrusel__diapositivas {
+  min-height: 190px;
+}
+
+.carrusel__imagen {
+  display: block;
+  width: min(100%, 320px);
+  height: 240px;
+  margin: 0 auto;
+  border: 1px solid #00f;
+  object-fit: contain;
+}
+
+.carrusel__imagen[hidden] {
+  display: none;
+}
+
+.carrusel__controles,
+.carrusel__indicadores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.carrusel__boton {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--carrusel-color-control);
+  color: #fff;
+  cursor: pointer;
+}
+
+.carrusel__indicador {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  border: 2px solid var(--carrusel-color-indicador);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.carrusel__indicador[aria-pressed="true"] {
+  background: var(--carrusel-color-indicador);
+}
+
+@media (max-width: 480px) {
+  .carrusel__imagen {
+    height: 190px;
+  }
+
+  .carrusel__controles {
+    gap: 8px;
+  }
+}

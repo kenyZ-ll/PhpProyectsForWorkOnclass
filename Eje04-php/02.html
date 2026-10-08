@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="02.php" method="post">
+      <h3>Nº1:</h3>
+      <input type="number" name="number01" /> <br />
+      <h3>Nº2:</h3>
+      <input type="number" name="number02" /> <br />
+
+      <div class="calcular" style="border: 1px solid">
+        <input type="button" value="+" />
+        <input type="button" value="-" />
+        <input type="button" value="*" />
+        <input type="button" value="/" />
+      </div>
+
+      <div class="base" style="border: 1px solid">
+        <input type="radio" name="base" value="decimal" checked /> Decimal
+        <input type="radio" name="base" value="binario" /> Binario
+        <input type="radio" name="base" value="hexadecimal" /> Hexadecimal
+      </div> <br>
+      <input type="button" value="borrar con reset">
+      <h3>El resultado es <input type="number" name="number" id=""></h3>
+    </form>
+  </body>
+</html>

@@ -15,10 +15,8 @@ for ($i = 0; $i < count($cuentas); $i++) {
     $contadornombres = $arrayuser[$i];
     $contadorpassword = $arraypassword[$i];
 
-    if (
-        ($contadornombres == $user) &&
-        ($contadorpassword == $password)
-    ) {
+    if ( ($contadornombres == $user) &&
+        ($contadorpassword == $password) ) {
         $encontrao = true;
     }
 }
