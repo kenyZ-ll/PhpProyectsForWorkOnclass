@@ -25,7 +25,7 @@ if ($encontrao == true) {
     echo "Bienvenido " . $user;
 } else {
     echo "<a href='01.html'> volver </a>";
-    echo "Error tu ele tonto";
+    echo "Hazlo bien ";
 }
 
 ?>
