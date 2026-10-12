@@ -6,7 +6,10 @@ $resultado = "";
     function sumar($num01, $num02) { return $num01 + $num02;}
     function restar($num01, $num02) { return $num01 - $num02;}
     function multiplicar($num01, $num02){ return $num01 * $num02;}
-    function dividir($num01, $num02) { return $num01 / $num02;}
+    function dividir($num01, $num02) 
+    { 
+        return $num01 / $num02;
+    }
 
     if ( isset($_POST['restar']) ) { $resultado = restar($num01, $num02);}
 
@@ -14,7 +17,17 @@ $resultado = "";
 
     if ( isset($_POST['multiplicar']) ) { $resultado = multiplicar($num01, $num02);}
 
-    if ( isset($_POST['dividir']) ) { $resultado = dividir($num01, $num02);}
+    if ( isset($_POST['dividir']) ) {
+        if($num02 == 0 || $num01 == 0) {
+            $resultado = "<b> multiplicate por 0 </b>";
+        } else {
+            $resultado = dividir($num01, $num02);
+        }
+       
+    
+    }
+
+
 
     if ( isset($_POST['borrar']) ) { $resultado = 0; }
 
@@ -101,7 +114,7 @@ $resultado = "";
                     <input type="submit" value="/" name="dividir" />
                     <input type="submit" value="Borrar" name="borrar" />
                 </div>
-                
+
                 <br />
 
                 <div class="tipo">
