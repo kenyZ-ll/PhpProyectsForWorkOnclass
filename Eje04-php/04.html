@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .titulo-formulario {
+      display: flex;
+      background-color: blue;
+      color: white;
+      text-shadow: 1px 2px 3px black;
+      align-items: center;
+      justify-content: center;
+      padding: 0px 0px 0px 0px;
+      margin-bottom: 20px;
+      margin-left: 0px;
+      width: 100%;
+      font-family: arial;
+    }
+  </style>
+  <body>
+    <div class="titulo-formulario">Formulario con múltiples campos</div>
+    <form action="04.php" method="post">
+      <h4>CAMPO DE TEXTO:</h4>
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="name" /> <br />
+      <br />
+
+      <label for="passwrd"> Contraseña:</label>
+      <input type="password" name="passwrd" /> <br />
+      <br />
+
+      <hr />
+      <h3><b>RADIO:</b></h3>
+      
+        <input type="radio" id="huey" name="drone" value="huey" checked />
+        <label for="huey">Rojo</label> <br>
+
+
+      
+        <input type="radio" id="dewey" name="drone" value="dewey" />
+        <label for="dewey">Naranja</label> <br>
+      
+
+      
+        <input type="radio" id="louie" name="drone" value="louie" />
+        <label for="louie">Verde</label> <br>
+      <hr>
+      <h3><b>CHECKBOX</b></h3>
+      <label for="publi">Quiero recibir Publicidad</label>
+      <input type="checkbox" name="publi" id=""> <br>
+
+      <h3><b>MULTI CHECKBOX:</b></h3>
+      <label for="ingles">Ingles:</label>
+      <input type="checkbox" name="ingles" id="">
+      <label for="frances">Francés:</label> 
+      <input type="checkbox" name="frances" id="">
+            <label for="aleman">Alemán:</label> 
+      <input type="checkbox" name="aleman" id=""> <br>
+      <hr>
+
+      <h3><b>SELECT:</b></h3>
+      <h4>Simple:</h4>
+      <label for="estudios">Año finalización estudios:</label>
+      <select name="estudios" id="estudios">
+          <option value="2014" >        2014</option>
+          <option value="2015" >        2015</option>
+          <option value="2016" selected>2016</option>
+          <option value="2017" >        2017</option>
+          <option value="2018" >        2018</option>
+      </select> <br>
+
+      <h3><b>Múltiple:</b></h3>
+      <label for="ciudades">ciudades</label>
+      <select name="ciudades" size="4">
+        <option value="Madrid" selected>Madrid</option>
+        <option value="Barcelona">Barcelona</option>
+        <option value="Valencia">Valencia</option>
+        <option value="Zaragoza">Marbella</option>
+        <option value="A Coruña"> A coruña</option>
+      </select>
+
+      <hr>
+      <h3><b>TEXTAREA:</b></h3>
+      <label for="comentarios">Escriba sus comentarios:</label>
+      <textarea rows="10" cols="20">Este formulario es muy completo</textarea> <br>
+      <hr>
+      <h3><b>BOTONES:</b></h3>
+      <input type="reset" value="Resetear el formulario">
+      <input type="submit" value="Enviar formulario al servidor">
+    </form>
+  </body>
+</html>

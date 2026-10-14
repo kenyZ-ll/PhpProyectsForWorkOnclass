@@ -13,10 +13,11 @@ $arraypassword = array_values($cuentas);
 $encontrao = false;
 for ($i = 0; $i < count($cuentas); $i++) {
     $contadornombres = $arrayuser[$i];
-    $contadorpassword = $arraypassword[$i];
+    $contadorpassword = $arraypassword[$i]; 
 
-    if ( ($contadornombres == $user) &&
-        ($contadorpassword == $password) ) {
+    if ( ($contadornombres == $user) && 
+            ($contadorpassword == $password) ) 
+    { 
         $encontrao = true;
     }
 }
@@ -27,5 +28,15 @@ if ($encontrao == true) {
     echo "<a href='01.html'> volver </a>";
     echo "Hazlo bien ";
 }
+
+/*
+para hacerlo con for each
+    foreach ($tusuarios as $usuariot => $clavet){
+        if ( $usuariot == $usuario && $clavet == $clave){
+        $encontrado = true;
+        break;
+        }
+    }
+*/
 
 ?>

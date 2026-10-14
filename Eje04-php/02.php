@@ -6,10 +6,7 @@ $resultado = "";
     function sumar($num01, $num02) { return $num01 + $num02;}
     function restar($num01, $num02) { return $num01 - $num02;}
     function multiplicar($num01, $num02){ return $num01 * $num02;}
-    function dividir($num01, $num02) 
-    { 
-        return $num01 / $num02;
-    }
+    function dividir($num01, $num02) { return $num01 / $num02;}
 
     if ( isset($_POST['restar']) ) { $resultado = restar($num01, $num02);}
 
@@ -26,8 +23,6 @@ $resultado = "";
        
     
     }
-
-
 
     if ( isset($_POST['borrar']) ) { $resultado = 0; }
 

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .titulo-formulario {
+      display: flex;
+      background-color: blue;
+      color: white;
+      text-shadow: 1px 2px 3px black;
+      align-items: center;
+      justify-content: center;
+      padding: 0px 0px 0px 0px;
+      margin-bottom: 20px;
+      margin-left: 0px;
+      width: 100%;
+      font-family: arial;
+    }
+  </style>
+  <body>
+    <div class="titulo-formulario">
+      <h1>FORMULARIO CON CONTROLES HTML5</h1>
+    </div>
+    
+    <form action="03.php" method="post">
+      NUMERO 1 (number)<input type="number" name="number" /> <br /><br />
+      NUMERO 2 (number)<input type="number" name="number" /> <br /> <br />
+      <label for="price">Elige un precio máximo de vivienda: </label>
+      10
+      <input
+        type="range"
+        name="price"
+        id="price"
+        min="10"
+        max="100"
+        step="10"
+        value="50"
+      />
+      100
+      <br /> <br />
+     <label for="estaciones">Estaciones (list)</label> <input list="estaciones" />
+
+      <datalist id="estaciones">
+        <option value="Atocha"></option>
+        <option value="Chanmartin"></option>
+        <option value="Sol"></option>
+        <option value="Gran Via"></option>
+        <option value="O'Donell"></option>
+      </datalist>
+      <br><br /><br />
+
+      <label for="colores">Color favorito (COLOR):</label> 
+      <input type="color" name="colores" id="colores" value="#00000"><br><br />
+
+      <label for="buscar">Buscar (search):</label> 
+      <input type="search" name="buscar" > <br> <br />
+
+      <label>Nombre (text):</label>
+      <input type="text" name="nombre" /> <br /> <br />
+
+      <label>Apellido (text):</label>
+      <input type="text" name="apellido" /> <br /> <br />
+
+      <label for="email">E-mail (email):</label>
+      <input type="email" name="correo"> <br> <br>
+
+      <label for="nacimiento">Fecha de nacimiento:</label>
+      <input type="date" name="nacimiento"> <br> <br>
+      
+      <!-- Hacer con php un rango entre 0 y 150-->
+      <label for="edad">Edad (number)(de 0 a 150):</label>
+      <input type="text" name="edad"> <br> <br>
+
+      <label for="url">Pagina personal (url):</label>
+      <input type="url" name="url" > <br> <br>
+
+      <label for="horario">Horario: De</label>
+      <input type="time" name="hora-abertura"> 
+      <label for="horario-cierre"> a </label>
+      <input type="time" name="hora-cierre"> <br> <br>
+
+      <input type="submit" value="Enviar consulta">
+    </for>
+  </body>
+</html>
